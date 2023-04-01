@@ -1,0 +1,39 @@
+{% extends 'Navbar.html' %}
+
+<html lang="en">
+{% block body %}
+<head>
+     <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+<style>
+     body {
+  background-image: url('/static/background.jpg');
+}
+
+</style>
+</head>
+<img src="/static/cli.gif" class="rounded float-right" width="600px" height="460px"/>
+<div class="col-md-5">
+    {% csrf_token %}
+  <form action = "{% url 'weather' %}" method="post">
+  {% csrf_token %}
+        <div class="form-group" align="center">
+
+            <h1>Weather</h1>
+            <label>Enter city:</label>
+            <input type="text" class="form-control" id = 'cname' placeholder="Enter Name" name="cname">
+
+            <br>
+            <button type="submit"  class="btn btn-default">Submit</button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+</html>

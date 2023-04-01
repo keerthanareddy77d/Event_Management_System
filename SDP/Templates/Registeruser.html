@@ -1,0 +1,104 @@
+{% extends 'LRnavbar.html' %}
+
+{% block body %}
+<br>
+<br>
+<link rel="stylesheet" href="success.css">
+<div class="container" align="center">
+
+<form action="registerInput" method="post" id="regtable" name="registrationform" onsubmit="return validateall()">
+  {% csrf_token %}
+  <!--  <table id="regtable2">
+            <tr>
+                <td> </td>
+<label class="form-label" for="username">Enter Username</label>
+                 <input type="text" id="username" placeholder="username" name="uname"/>
+
+            </tr>
+            <tr>
+            <td><p id="errorname"></p></td>
+            </tr>
+            <tr>
+                <br/><br/>
+                <label class="form-label" for="username">Enter Password</label>
+                 <input type="text" placeholder="user Password" name="upassword"/>
+            </tr>
+            <tr>
+                <br/><br/>
+                <label class="form-label" for="username">Enter Email</label>
+                 <input type="text" placeholder="userEmail" name="uemail"/>
+            </tr>
+            <tr>
+               <br/><br/>
+                <label class="form-label" for="username">Enter Mobile Number</label>
+                 <input type="text" placeholder="userMobile" name="umobile"/>
+            </tr>
+            <tr>
+                <td> <input type="submit" value="Register"> </td>
+            </tr>
+        </table>-->
+    <section class="vh-100 bg-image"
+  style="background-image: url('/static/background.jpg'); height:30px">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-3">Create an account</h2>
+
+              <form>
+
+                <div class="form-outline mb-2">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="uname"/>
+                  <label class="form-label" for="form3Example1cg">User Name</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <input type="password" id="form3Example3cg" class="form-control form-control-lg" name="upassword"/>
+                  <label class="form-label" for="form3Example3cg">Password</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <input type="password" id="form3Example3c" class="form-control form-control-lg" name="uconfirm"/>
+                  <label class="form-label" for="form3Example3cg">confirm Password</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <input type="email" id="form3Example4cg" class="form-control form-control-lg" name="uemail" />
+                  <label class="form-label" for="form3Example4cg">Email</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <input type="Number" id="form3Example4cdg" class="form-control form-control-lg" name="umobile"/>
+                  <label class="form-label" for="form3Example4cdg">Mobile</label>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-3">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="fo">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-3 mb-0">Have already an account? <a href="/loginpagehtml"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </form>
+</div>
+
+{% endblock %}

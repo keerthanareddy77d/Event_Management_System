@@ -1,0 +1,78 @@
+{% extends 'Navbar.html' %}
+#for images
+{% load static %}
+<html>
+{% block body %}
+<br>
+<head>
+    <style>
+        body {
+  background-image: url('/static/background.jpg');
+}
+    </style>
+</head>
+<div class="row">
+  <div class="col-sm-4">
+      <div class="card">
+          <img class="card-img-top" src="{% static 'b1.jpg' %}" alt="Card image cap" height="310" >
+          <div class="card-body">
+              <h5 class="card-title">Birthday</h5>
+              <p class="card-text">Rs: 1500/- <br>
+          </div>
+      </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+        <img class="card-img-top" src="{% static 'b2.jpg' %}" alt="Card image cap" height="310" >
+        <div class="card-body">
+            <h5 class="card-title">Birthday</h5>
+            <p class="card-text">Rs: 2500/- <br>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card">
+        <img class="card-img-top" src="{% static 'b3.jpg' %}" alt="Card image cap" height="310" >
+        <div class="card-body">
+            <h5 class="card-title">Birthday</h5>
+            <p class="card-text">Rs: 3000/-<br>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+  <div class="card">
+
+        <img class="card-img-top" src="{% static 'b4.jpg' %}" alt="Card image cap" height="310" >
+      <div class="card-body">
+        <h5 class="card-title">Birthday</h5>
+        <p class="card-text">Rs: 35000/- <br>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+  <div class="card">
+
+        <img class="card-img-top" src="{% static 'b5.jpg' %}" alt="Card image cap" height="310" >
+      <div class="card-body">
+        <h5 class="card-title">Birthday</h5>
+        <p class="card-text">Rs: 4000/- <br>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+
+    <div class="card">
+     <img class="card-img-top" src="static/b6.jpg" alt="Card image cap" height="310">
+      <div class="card-body">
+        <h5 class="card-title">Birthday</h5>
+        <p class="card-text">Rs: 4500/-<br>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+</html>

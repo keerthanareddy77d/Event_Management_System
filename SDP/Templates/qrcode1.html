@@ -1,0 +1,31 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+{% block body %}
+<head>
+    <style>
+body {
+  background-image: url('/static/background.jpg');
+}
+</style>
+</head>
+<div class="col-md-5">
+    {% csrf_token %}
+  <form action = "{% url 'qrcode1' %}" method="post">
+  {% csrf_token %}
+        <div class="form-group" align="center">
+            <h1>UPI ID To QR code</h1>
+            <label>Enter the Name :</label>
+            <input type="text" class="form-control" id = 'sname' placeholder="Enter Name" name="sname">
+        <br>
+            <br>
+            <label>Enter UPI ID</label>
+            <input type="text" class="form-control" id = 'sid' placeholder="Enter ID" name="sid">
+        <br>
+            <br>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+</html>

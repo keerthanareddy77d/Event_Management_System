@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% extends 'Navbar.html' %}
+<html>
+{% block body %}
+  <head>
+    <title>Celebs</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+    body {
+  background-image: url('/static/background.jpg');
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {background-color: #ddd;}
+      .slider {
+        width: 500px;
+        height: 300px;
+        background-color:#e09bf3;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .image-container {
+        width: 1500px;
+        background-color: pink;
+        height: 300px;
+        clear: both;
+        position: relative;
+        -webkit-transition: left 2s;
+        -moz-transition: left 2s;
+        -o-transition: left 2s;
+        transition: left 2s;
+      }
+      .slide {
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+      }
+      #slide-1:target ~ .image-container {
+        left: 0px;
+      }
+      #slide-2:target ~ .image-container {
+        left: -500px;
+      }
+      #slide-3:target ~ .image-container {
+        left: -1000px;
+      }
+      .buttons {
+        position: relative;
+        top: -20px;
+      }
+      .buttons a {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        background-color:#e09bf3;
+      }
+    </style>
+    <script>
+$(document).ready(function(){
+    $('.search').on('keyup',function(){
+        var searchTerm = $(this).val().toLowerCase();
+        $('#userTbl tbody tr').each(function(){
+            var lineStr = $(this).text().toLowerCase();
+            if(lineStr.indexOf(searchTerm) === -1){
+                $(this).hide();
+            }else{
+                $(this).show();
+            }
+        });
+    });
+});
+</script>
+  </head>
+  <body>
+  <center>
+    <div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="Search?">
+</div>
+<table class="table table-striped" id="userTbl">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Stream</th>
+      <th>View</th>
+      <th>Take appointment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Geetha Madhuri</td>
+        <td>Singer</td>
+        <td><img src="/static/geeta.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('You reserved things')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Revanth</td>
+        <td>Singer</td>
+        <td><img src="/static/revanth.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('You reserved things')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Baba Baskar</td>
+        <td>Choreographer</td>
+        <td><img src="/static/baba.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('You reserved things')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Brahmandanam</td>
+        <td>Comedian</td>
+        <td><img src="/static/brahmandanam.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('Booked Succesfully')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Kovai sarala</td>
+        <td>Comedian</td>
+        <td><img src="/static/KovaiSarala.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('Booked Succesfully')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Rahul Ramakrishna</td>
+        <td>Comedian</td>
+        <td><img src="/static/rahul.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('Booked Succesfully')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Surya</td>
+        <td>Actor</td>
+        <td><img src="/static/surya.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('Booked Succesfully')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Akhil</td>
+        <td>Actor</td>
+        <td><img src="/static/akhil.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('You reserved things')">Take appointment</button></td>
+
+    </tr>
+    <tr>
+        <td>Ram</td>
+        <td>Actor</td>
+        <td><img src="/static/ram.jpg" width="200"></td>
+                <td><button type="button" onclick="alert('You reserved things')">Take appointment</button></td>
+
+    </tr>
+
+    </tbody>
+</table>
+      <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a  href="/halls">halls</a>
+  <a  href="/catering">catering</a>
+  <a class="active" href="/celebs">celebraties</a>
+  <a href="#">&raquo;</a>
+</div>
+    </center>
+
+  </body>
+{% endblock %}
+</html>

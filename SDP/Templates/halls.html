@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% extends 'Navbar.html' %}
+<html>
+{% block body %}
+  <head>
+    <title>Halls</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+    body {
+  background-image: url('/static/background.jpg');
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {background-color: #ddd;}
+      .slider {
+        width: 500px;
+        height: 300px;
+        background-color:#e09bf3;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .image-container {
+        width: 1500px;
+        background-color: pink;
+        height: 300px;
+        clear: both;
+        position: relative;
+        -webkit-transition: left 2s;
+        -moz-transition: left 2s;
+        -o-transition: left 2s;
+        transition: left 2s;
+      }
+      .slide {
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+      }
+      #slide-1:target ~ .image-container {
+        left: 0px;
+      }
+      #slide-2:target ~ .image-container {
+        left: -500px;
+      }
+      #slide-3:target ~ .image-container {
+        left: -1000px;
+      }
+      .buttons {
+        position: relative;
+        top: -20px;
+      }
+      .buttons a {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        background-color:#e09bf3;
+      }
+    </style>
+    <script>
+$(document).ready(function(){
+    $('.search').on('keyup',function(){
+        var searchTerm = $(this).val().toLowerCase();
+        $('#userTbl tbody tr').each(function(){
+            var lineStr = $(this).text().toLowerCase();
+            if(lineStr.indexOf(searchTerm) === -1){
+                $(this).hide();
+            }else{
+                $(this).show();
+            }
+        });
+    });
+});
+</script>
+  </head>
+  <body>
+  <center>
+    <div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="What you looking for?">
+</div>
+<table class="table table-striped" id="userTbl">
+    <thead>
+    <tr>
+      <th>State</th>
+      <th>City</th>
+      <th>Address</th>
+      <th>View</th>
+      <th>Book</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Andhra Pradesh</td>
+        <td>Kurnool</td>
+        <td>Siri function hall</td>
+        <td><img src="/static/siri.jpg" width="200"></td>
+        <td><center><a href="/catering" class="btn btn-primary">BOOK NOW</a></center></td>
+    </tr>
+    <tr>
+        <td>Telangana</td>
+        <td>Wanaparthy</td>
+        <td>evod function hall</td>
+        <td><img src="/static/evod.jpg" width="200"></td>
+        <td><center><a href="/catering" class="btn btn-primary">BOOK NOW</a></center></td>
+    </tr>
+    <tr>
+        <td>Kerala</td>
+        <td>Idukki</td>
+        <td>sam function hall</td>
+        <td><img src="/static/sam.jpg" width="200"></td>
+        <td><center><a href="/catering" class="btn btn-primary">BOOK NOW</a></center></td>
+    </tr>
+    <tr>
+        <td>Tamil Nadu</td>
+        <td>koyambattur</td>
+        <td>vijay function hall</td>
+        <td><img src="/static/vijay.jpg" width="200"></td>
+        <td><center><a href='/catering' class="btn btn-primary">BOOK NOW</a></center></td>
+    </tr>
+    </tbody>
+</table>
+    </center>
+
+      <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a class="active" href="/halls">halls</a>
+  <a  href="/catering">catering</a>
+  <a href="/celebs">celebraties</a>
+  <a href="#">&raquo;</a>
+</div>
+  </body>
+{% endblock %}
+</html>
